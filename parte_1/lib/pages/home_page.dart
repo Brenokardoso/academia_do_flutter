@@ -7,9 +7,17 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Pagina Inicial"),
+        title: const Text("Pagina Inicial"),
       ),
-      body: Container(),
+      body: Center(
+        child: FilledButton(
+          onPressed: () => Navigator.of(context).pushNamed(
+            "/detalhes",
+            arguments: const Text("Texto Da Home Page"),
+          ),
+          child: const Text('Ir para detalhes'),
+        ),
+      ),
     );
   }
 }

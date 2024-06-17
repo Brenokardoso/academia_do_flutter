@@ -5,9 +5,20 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var arguments =
+        ModalRoute.of(context)?.settings.arguments as Text ;
     return Scaffold(
-      appBar: AppBar(title: Text("Detalhes"),),
-      body: Container(),
+      appBar: AppBar(
+        title: const Text("Detalhes"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            arguments,
+          ],
+        ),
+      ),
     );
   }
 }

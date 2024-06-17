@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parte_1/core/navigator_observer.dart';
 import 'package:parte_1/pages/detalhes.dart';
 import 'package:parte_1/pages/home_page.dart';
 
@@ -15,9 +16,21 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       title: "Flutter Navegações",
-      routes: {
-        "/" :(context) => const HomePage(),
-        "/detalhes" : (detalhes)=> const DetailPage()
+      navigatorObservers: [CustomNavigatorObserver()],
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case '/':
+            return MaterialPageRoute(
+              builder: (_) => const HomePage(),
+              settings: settings,
+            );
+          case '/detalhes':
+            return MaterialPageRoute(
+              builder: (detalhes) => const DetailPage(),
+              settings: settings,
+            );
+        }
+        return null;
       },
     );
   }
