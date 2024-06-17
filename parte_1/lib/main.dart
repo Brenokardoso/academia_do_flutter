@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:parte_1/core/navigator_observer.dart';
 import 'package:parte_1/pages/detalhes.dart';
+import 'package:parte_1/pages/detalhes_2.dart';
 import 'package:parte_1/pages/home_page.dart';
 
 void main() {
@@ -27,6 +28,11 @@ class MyApp extends StatelessWidget {
           case '/detalhes':
             return MaterialPageRoute(
               builder: (detalhes) => const DetailPage(),
+              settings: settings,
+            );
+          case '/detalhes2':
+            return MaterialPageRoute(
+              builder: (detalhes2) => const DetailTwo(),
               settings: settings,
             );
         }
