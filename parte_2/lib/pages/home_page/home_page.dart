@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum PopUpMenuPages { container }
+enum PopUpMenuPages { container, rowsAndColumns }
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,22 +11,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Página Inicial"),
         actions: [
-          PopupMenuButton<PopUpMenuPages>(
-            onSelected: (PopUpMenuPages value) {
-              switch (value) {
-                case PopUpMenuPages.container:
-                  Navigator.of(context).pushNamed('');
-              }
-            },
-            itemBuilder: (BuildContext context) {
-              return <PopupMenuItem<PopUpMenuPages>>[
-                const PopupMenuItem(
-                  value: PopUpMenuPages.container,
-                  child: Text("Container"),
-                )
-              ];
-            },
-          )
+          customPopUpMenuIButton(context),
         ],
       ),
       body: const Center(
@@ -38,4 +23,33 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget customPopUpMenuIButton(BuildContext context) {
+  return PopupMenuButton<PopUpMenuPages>(
+    icon: const Icon(Icons.construction_outlined),
+    tooltip: 'Configurações',
+    onSelected: (PopUpMenuPages value) {
+      switch (value) {
+        case PopUpMenuPages.container:
+          Navigator.of(context).pushNamed('/container');
+          break;
+        case PopUpMenuPages.rowsAndColumns:
+          Navigator.of(context).pushNamed('/rowsAndColumns');
+          break;
+      }
+    },
+    itemBuilder: (BuildContext context) {
+      return <PopupMenuItem<PopUpMenuPages>>[
+        const PopupMenuItem(
+          value: PopUpMenuPages.container,
+          child: Text("Container"),
+        ),
+        const PopupMenuItem<PopUpMenuPages>(
+          value: PopUpMenuPages.rowsAndColumns,
+          child: Text('Rows And Columns'),
+        )
+      ];
+    },
+  );
 }
