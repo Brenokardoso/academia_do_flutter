@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum PopUpMenuPages { container, rowsAndColumns }
+enum PopUpMenuPages { container, rowsAndColumns, mediaQuery }
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -37,6 +37,9 @@ Widget customPopUpMenuIButton(BuildContext context) {
         case PopUpMenuPages.rowsAndColumns:
           Navigator.of(context).pushNamed('/rowsAndColumns');
           break;
+        case PopUpMenuPages.mediaQuery:
+          Navigator.of(context).pushNamed('/mediaQuery');
+          break;
       }
     },
     itemBuilder: (BuildContext context) {
@@ -47,7 +50,11 @@ Widget customPopUpMenuIButton(BuildContext context) {
         ),
         const PopupMenuItem<PopUpMenuPages>(
           value: PopUpMenuPages.rowsAndColumns,
-          child: Text('Rows And Columns'),
+          child: Text("Rows And Columns"),
+        ),
+        const PopupMenuItem(
+          value: PopUpMenuPages.mediaQuery,
+          child: Text("Media Query"),
         )
       ];
     },
