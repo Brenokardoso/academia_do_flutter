@@ -1,11 +1,10 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:parte_2/pages/buttons_and_text_rotatiton/buttons_and_text_rotatiton.dart';
 import 'package:parte_2/pages/container/container_page.dart';
 import 'package:parte_2/pages/home_page/home_page.dart';
 import 'package:parte_2/pages/layoutBuilder/layout_builder_page.dart';
 import 'package:parte_2/pages/media_query/media_query.dart';
 import 'package:parte_2/pages/rows_and_columns/rows_and_coluns_page.dart';
-import 'package:device_preview/device_preview.dart';
 
 // void main() {
 //   runApp(
@@ -54,11 +53,16 @@ class MyApp extends StatelessWidget {
               builder: (mediaquery) => const MediaQueryHome(),
               settings: settings,
             );
-          case "layoutBuilder":
+          case "/layoutBuilder":
             return MaterialPageRoute(
               builder: (layoutBuilder) => const LayoutBuilderPage(),
               settings: settings,
             );
+          case '/buttonsAndTextRottation':
+            return MaterialPageRoute(
+                builder: (buttonsAndTextRottation) =>
+                    const ButtonsAndTextRottation(),
+                settings: settings,);
         }
         return null;
       },

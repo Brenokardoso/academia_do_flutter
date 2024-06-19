@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
-enum PopUpMenuPages { container, rowsAndColumns, mediaQuery, layoutBuilder }
+enum PopUpMenuPages {
+  container,
+  rowsAndColumns,
+  mediaQuery,
+  layoutBuilder,
+  buttonsAndTextRottation
+}
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -41,7 +47,10 @@ Widget customPopUpMenuIButton(BuildContext context) {
           Navigator.of(context).pushNamed('/mediaQuery');
           break;
         case PopUpMenuPages.layoutBuilder:
-          Navigator.of(context).pushNamed("layoutBuilder");
+          Navigator.of(context).pushNamed("/layoutBuilder");
+          break;
+        case PopUpMenuPages.buttonsAndTextRottation:
+          Navigator.of(context).pushNamed('/buttonsAndTextRottation');
           break;
       }
     },
@@ -62,6 +71,10 @@ Widget customPopUpMenuIButton(BuildContext context) {
         const PopupMenuItem(
           value: PopUpMenuPages.layoutBuilder,
           child: Text("LayoutBuilder"),
+        ),
+        const PopupMenuItem(
+          value: PopUpMenuPages.buttonsAndTextRottation,
+          child: Text("Botões e Rotações"),
         )
       ];
     },

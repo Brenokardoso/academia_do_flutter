@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class LayoutBuilderPage extends StatelessWidget {
   const LayoutBuilderPage({super.key});
@@ -13,18 +12,18 @@ class LayoutBuilderPage extends StatelessWidget {
       body: Center(
         child: LayoutBuilder(
           builder: (context, constraits) {
-            double max_width = constraits.maxWidth;
-            double max_heigth = constraits.maxHeight;
+            double maxWidth = constraits.maxWidth;
+            double maxHeigth = constraits.maxHeight;
             return Column(
               children: [
                 Container(
-                  width: max_width,
-                  height: max_heigth / 2,
+                  width: maxWidth,
+                  height: maxHeigth / 2,
                   color: Colors.orangeAccent,
                 ),
                 Container(
-                  width: max_width,
-                  height: max_heigth / 2,
+                  width: maxWidth,
+                  height: maxHeigth / 2,
                   color: Colors.blue,
                 ),
               ],
