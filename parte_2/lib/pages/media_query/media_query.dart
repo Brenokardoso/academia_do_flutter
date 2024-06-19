@@ -10,9 +10,9 @@ class MediaQueryHome extends StatelessWidget {
     final statusBar = MediaQuery.of(context).padding.top;
     final screamheightSize =
         MediaQuery.of(context).size.height - statusBar - kToolbarHeight;
-
     final screamWidthSize = MediaQuery.of(context).size.width -
         MediaQuery.of(context).padding.horizontal;
+        
     print("Valor da orientação : ${mediaQuery.orientation}");
     return Scaffold(
       appBar: AppBar(
