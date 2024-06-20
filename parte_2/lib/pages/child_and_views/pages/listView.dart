@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:parte_2/pages/child_and_views/pages/singleChild.dart';
-import 'package:parte_2/pages/home_page/home_page.dart';
+import 'package:parte_2/home_page/home_page.dart';
 
 class CustomListView extends StatelessWidget {
   const CustomListView({super.key});

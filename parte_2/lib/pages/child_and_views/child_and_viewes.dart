@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:parte_2/pages/child_and_views/pages/listView.dart';
 import 'package:parte_2/pages/child_and_views/pages/singleChild.dart';
-import 'package:parte_2/pages/home_page/home_page.dart';
+import 'package:parte_2/home_page/home_page.dart';
 
 class ChildAndViews extends StatelessWidget {
   const ChildAndViews({super.key});

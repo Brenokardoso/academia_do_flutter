@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:parte_2/pages/home_page/home_page.dart';
+import 'package:parte_2/home_page/home_page.dart';
 
 class CustomSingleChild extends StatelessWidget {
   const CustomSingleChild({super.key});

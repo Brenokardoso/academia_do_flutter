@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:parte_2/pages/buttons_and_text_rotatiton/buttons_and_text_rotatiton.dart';
 import 'package:parte_2/pages/child_and_views/child_and_viewes.dart';
 import 'package:parte_2/pages/container/container_page.dart';
-import 'package:parte_2/pages/home_page/home_page.dart';
+import 'package:parte_2/pages/dialogs/dialogs.dart';
+import 'package:parte_2/home_page/home_page.dart';
 import 'package:parte_2/pages/layoutBuilder/layout_builder_page.dart';
 import 'package:parte_2/pages/media_query/media_query.dart';
 import 'package:parte_2/pages/rows_and_columns/rows_and_coluns_page.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       initialRoute: '/',
+      routes: {"/dialogs": (context) => const CustomDialogs()},
       // locale: DevicePreview.locale(context),
       // builder: (context, child) => DevicePreview.appBuilder(context, child),
       onGenerateRoute: (settings) {
@@ -66,7 +68,6 @@ class MyApp extends StatelessWidget {
                   const ButtonsAndTextRottation(),
               settings: settings,
             );
-
           case '/childAndViews':
             return MaterialPageRoute(
               builder: (childAndViews) => const ChildAndViews(),
