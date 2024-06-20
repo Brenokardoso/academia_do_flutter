@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       initialRoute: '/',
-      routes: {"/dialogs": (context) => const CustomDialogs()},
+      // routes: {"/dialogs": (context) => const CustomDialogs()},
       // locale: DevicePreview.locale(context),
       // builder: (context, child) => DevicePreview.appBuilder(context, child),
       onGenerateRoute: (settings) {
@@ -71,6 +71,11 @@ class MyApp extends StatelessWidget {
           case '/childAndViews':
             return MaterialPageRoute(
               builder: (childAndViews) => const ChildAndViews(),
+              settings: settings,
+            );
+          case '/dialogs':
+            return MaterialPageRoute(
+              builder: (dialogs) => const CustomDialogs(),
               settings: settings,
             );
         }
