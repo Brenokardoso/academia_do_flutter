@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:parte_2/pages/buttons_and_text_rotatiton/buttons_and_text_rotatiton.dart';
 import 'package:parte_2/pages/child_and_views/child_and_viewes.dart';
@@ -7,21 +8,23 @@ import 'package:parte_2/home_page/home_page.dart';
 import 'package:parte_2/pages/layoutBuilder/layout_builder_page.dart';
 import 'package:parte_2/pages/media_query/media_query.dart';
 import 'package:parte_2/pages/rows_and_columns/rows_and_coluns_page.dart';
-
-// void main() {
-//   runApp(
-//     DevicePreview(
-//       builder: (BuildContext context) => const MyApp(),
-//       enabled: !kReleaseMode,
-//     ),
-//   );
-// }
+import 'package:device_preview/device_preview.dart';
+import 'package:parte_2/pages/dialogs/dialogs.dart';
 
 void main() {
   runApp(
-    const MyApp(),
+    DevicePreview(
+      builder: (BuildContext context) => const MyApp(),
+      enabled: !kReleaseMode,
+    ),
   );
 }
+
+// void main() {
+//   runApp(
+//     const MyApp(),
+//   );
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -31,10 +34,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
+      title: 'Flutter mão na massa  ',
       initialRoute: '/',
-      // routes: {"/dialogs": (context) => const CustomDialogs()},
-      // locale: DevicePreview.locale(context),
-      // builder: (context, child) => DevicePreview.appBuilder(context, child),
+      locale: DevicePreview.locale(context),
+      builder: (context, child) => DevicePreview.appBuilder(context, child),
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case '/':

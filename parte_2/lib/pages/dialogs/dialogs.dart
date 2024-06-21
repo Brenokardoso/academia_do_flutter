@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:parte_2/pages/dialogs/dialog_pages/Dialog.dart';
 
@@ -33,29 +35,45 @@ class CustomDialogsPage extends StatelessWidget {
             ElevatedButton(
                 onPressed: () => showDialog(
                       context: context,
-                      builder: (context) => AlertDialog(
-                        title: const Text('Dialogo de alerta'),
-                        content: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: List.generate(
-                            10,
-                            (index) => Container(
-                              width: 25,
-                              height: 25,
-                              margin: const EdgeInsets.only(bottom: 10),
-                              color: Color.fromRGBO(
-                                  22 * index, 17 * index, 13 * index, 1),
-                              child: Text("$index"),
+                      builder: (context) {
+                        // if (Platform.isLinux) {
+                        //   print('Droga é o Linux');
+                        // }
+                        // if (Platform.isAndroid) {
+                        //   print("Estou no android");
+                        // }
+                        //else if (Platform.isIOS) {
+                        //   print("Estou no IOS");
+                        // } else if (Platform.isMacOS) {
+                        //   print("O pai tá de MAC");
+                        // } else if (Platform.isWindows) {
+                        //   print("Espero quw não seja o 10");
+                        // }
+
+                        return AlertDialog(
+                          title: const Text('Dialogo de alerta'),
+                          content: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: List.generate(
+                              10,
+                              (index) => Container(
+                                width: 25,
+                                height: 25,
+                                margin: const EdgeInsets.only(bottom: 10),
+                                color: Color.fromRGBO(
+                                    22 * index, 17 * index, 13 * index, 1),
+                                child: Text("$index"),
+                              ),
                             ),
                           ),
-                        ),
-                        actions: const [
-                          Text("1"),
-                          Text("2"),
-                          Text("3"),
-                          Text("4"),
-                        ],
-                      ),
+                          actions: const [
+                            Text("1"),
+                            Text("2"),
+                            Text("3"),
+                            Text("4"),
+                          ],
+                        );
+                      },
                     ),
                 child: const Text("AlertDialog")),
             space,
@@ -70,16 +88,24 @@ class CustomDialogsPage extends StatelessWidget {
                 child: const Text("Time Picker")),
             space,
             ElevatedButton(
-                onPressed: () async {
-                  var tempo = await showDatePicker(
-                    context: context,
-                    firstDate: DateTime(2002),
-                    lastDate: DateTime(2024),
-                  );
-                  print(
-                      "O espaço de tempo de agora para dezembro  foi de : $tempo");
-                },
-                child: const Text("Date Picker")),
+              onPressed: () async {
+                var tempo = await showDatePicker(
+                  context: context,
+                  firstDate: DateTime(2002),
+                  lastDate: DateTime(2024),
+                );
+                print(
+                    "O espaço de tempo de agora para dezembro  foi de : $tempo");
+              },
+              child: const Text("Date Picker"),
+            ),
+            space,
+            ElevatedButton(
+              onPressed: () => showAboutDialog(
+                  context: context,
+                  children: [const Text("Bem vindo em sobre os dialogos")]),
+              child: const Text("AboutDaialogs"),
+            ),
             space,
           ],
         ),
