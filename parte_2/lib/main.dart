@@ -75,7 +75,7 @@ class MyApp extends StatelessWidget {
             );
           case '/dialogs':
             return MaterialPageRoute(
-              builder: (dialogs) => const CustomDialogs(),
+              builder: (dialogs) => const CustomDialogsPage(),
               settings: settings,
             );
         }

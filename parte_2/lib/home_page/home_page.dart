@@ -80,7 +80,7 @@ Widget customPopUpMenuIButton(BuildContext context) {
         const PopupMenuItem(
           value: PopUpMenuPages.layoutBuilder,
           child: Text("LayoutBuilder"),
-        ),
+        ), 
         const PopupMenuItem(
           value: PopUpMenuPages.buttonsAndTextRottation,
           child: Text("Botões e Rotações"),
