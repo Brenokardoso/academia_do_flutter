@@ -5,6 +5,7 @@ import 'package:parte_2/pages/child_and_views/child_and_viewes.dart';
 import 'package:parte_2/pages/container/container_page.dart';
 import 'package:parte_2/pages/dialogs/dialogs.dart';
 import 'package:parte_2/home_page/home_page.dart';
+import 'package:parte_2/pages/forms/forms_page.dart';
 import 'package:parte_2/pages/layoutBuilder/layout_builder_page.dart';
 import 'package:parte_2/pages/media_query/media_query.dart';
 import 'package:parte_2/pages/rows_and_columns/rows_and_coluns_page.dart';
@@ -87,7 +88,12 @@ class MyApp extends StatelessWidget {
             );
           case '/snackBar':
             return MaterialPageRoute(
-                builder: (snackBar) => const CustomSnackBarPage());
+              builder: (snackBar) => const CustomSnackBarPage(),
+            );
+          case '/forms':
+            return MaterialPageRoute(
+              builder: (forms) => FormsPage(),
+            );
         }
 
         return null;
