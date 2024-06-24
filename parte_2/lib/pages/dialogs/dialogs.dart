@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:parte_2/pages/dialogs/dialog_pages/Dialog.dart';
 
@@ -36,22 +37,28 @@ class CustomDialogsPage extends StatelessWidget {
                 onPressed: () => showDialog(
                       context: context,
                       builder: (context) {
-                        // if (Platform.isLinux) {
-                        //   print('Droga é o Linux');
-                        // }
-                        // if (Platform.isAndroid) {
-                        //   print("Estou no android");
-                        // }
-                        //else if (Platform.isIOS) {
-                        //   print("Estou no IOS");
-                        // } else if (Platform.isMacOS) {
-                        //   print("O pai tá de MAC");
-                        // } else if (Platform.isWindows) {
-                        //   print("Espero quw não seja o 10");
-                        // }
+                        if (Platform.isLinux) {
+                          return CupertinoAlertDialog(
+                            title: const Text('Dialogo de alerta linux'),
+                            content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: List.generate(
+                                10,
+                                (index) => Container(
+                                  width: 25,
+                                  height: 25,
+                                  margin: const EdgeInsets.only(bottom: 10),
+                                  color: Color.fromRGBO(
+                                      32 * index, 44 * index, 9 * index, 1),
+                                  child: Text("$index"),
+                                ),
+                              ),
+                            ),
+                          );
+                        }
 
                         return AlertDialog(
-                          title: const Text('Dialogo de alerta'),
+                          title: const Text('Dialogo de alerta padrao'),
                           content: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: List.generate(

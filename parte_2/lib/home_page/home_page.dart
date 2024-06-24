@@ -9,6 +9,7 @@ enum PopUpMenuPages {
   buttonsAndTextRottation,
   childAndListView,
   dialogs,
+  snackBar,
 }
 
 class HomePage extends StatelessWidget {
@@ -61,6 +62,9 @@ Widget customPopUpMenuIButton(BuildContext context) {
         case PopUpMenuPages.dialogs:
           Navigator.of(context).pushNamed('/dialogs');
           break;
+        case PopUpMenuPages.snackBar:
+          Navigator.of(context).pushNamed('/snackBar');
+          break;
       }
     },
     itemBuilder: (BuildContext context) {
@@ -80,7 +84,7 @@ Widget customPopUpMenuIButton(BuildContext context) {
         const PopupMenuItem(
           value: PopUpMenuPages.layoutBuilder,
           child: Text("LayoutBuilder"),
-        ), 
+        ),
         const PopupMenuItem(
           value: PopUpMenuPages.buttonsAndTextRottation,
           child: Text("Botões e Rotações"),
@@ -93,6 +97,10 @@ Widget customPopUpMenuIButton(BuildContext context) {
           value: PopUpMenuPages.dialogs,
           child: Text("Dialogs"),
         ),
+        const PopupMenuItem(
+          value: PopUpMenuPages.snackBar,
+          child: Text("SnackBar"),
+        )
       ];
     },
   );
