@@ -88,10 +88,12 @@ class MyApp extends StatelessWidget {
             );
           case '/snackBar':
             return MaterialPageRoute(
+              settings: settings,
               builder: (snackBar) => const CustomSnackBarPage(),
             );
           case '/forms':
             return MaterialPageRoute(
+              settings: settings,
               builder: (forms) => FormsPage(),
             );
         }
