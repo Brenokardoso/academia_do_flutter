@@ -1,0 +1,110 @@
+[
+    {
+        "cidade": "Palmas",
+        "estado": "Tocantins"
+    },
+    {
+        "cidade": "São Paulo",
+        "estado": "São Paulo"
+    },
+    {
+        "cidade": "Rio de Janeiro",
+        "estado": "Rio de Janeiro"
+    },
+    {
+        "cidade": "Belo Horizonte",
+        "estado": "Minas Gerais"
+    },
+    {
+        "cidade": "Salvador",
+        "estado": "Bahia"
+    },
+    {
+        "cidade": "Curitiba",
+        "estado": "Paraná"
+    },
+    {
+        "cidade": "Fortaleza",
+        "estado": "Ceará"
+    },
+    {
+        "cidade": "Recife",
+        "estado": "Pernambuco"
+    },
+    {
+        "cidade": "Porto Alegre",
+        "estado": "Rio Grande do Sul"
+    },
+    {
+        "cidade": "Manaus",
+        "estado": "Amazonas"
+    },
+    {
+        "cidade": "Belém",
+        "estado": "Pará"
+    },
+    {
+        "cidade": "Goiânia",
+        "estado": "Goiás"
+    },
+    {
+        "cidade": "Campinas",
+        "estado": "São Paulo"
+    },
+    {
+        "cidade": "São Luís",
+        "estado": "Maranhão"
+    },
+    {
+        "cidade": "Maceió",
+        "estado": "Alagoas"
+    },
+    {
+        "cidade": "Natal",
+        "estado": "Rio Grande do Norte"
+    },
+    {
+        "cidade": "Teresina",
+        "estado": "Piauí"
+    },
+    {
+        "cidade": "João Pessoa",
+        "estado": "Paraíba"
+    },
+    {
+        "cidade": "Campo Grande",
+        "estado": "Mato Grosso do Sul"
+    },
+    {
+        "cidade": "Cuiabá",
+        "estado": "Mato Grosso"
+    },
+    {
+        "cidade": "Aracaju",
+        "estado": "Sergipe"
+    },
+    {
+        "cidade": "Porto Velho",
+        "estado": "Rondônia"
+    },
+    {
+        "cidade": "Macapá",
+        "estado": "Amapá"
+    },
+    {
+        "cidade": "Boa Vista",
+        "estado": "Roraima"
+    },
+    {
+        "cidade": "Florianópolis",
+        "estado": "Santa Catarina"
+    },
+    {
+        "cidade": "Vitória",
+        "estado": "Espírito Santo"
+    },
+    {
+        "cidade": "Brasília",
+        "estado": "Distrito Federal"
+    }
+]

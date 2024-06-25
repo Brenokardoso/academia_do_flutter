@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:parte_2/pages/buttons_and_text_rotatiton/buttons_and_text_rotatiton.dart';
 import 'package:parte_2/pages/child_and_views/child_and_viewes.dart';
+import 'package:parte_2/pages/cidades/cidades_page.dart';
 import 'package:parte_2/pages/container/container_page.dart';
 import 'package:parte_2/pages/dialogs/dialogs.dart';
 import 'package:parte_2/home_page/home_page.dart';
@@ -95,6 +96,11 @@ class MyApp extends StatelessWidget {
             return MaterialPageRoute(
               settings: settings,
               builder: (forms) => FormsPage(),
+            );
+          case 'cidade':
+            return MaterialPageRoute(
+              settings: settings,
+              builder: (cidade) => const CidadesPage(),
             );
         }
 
