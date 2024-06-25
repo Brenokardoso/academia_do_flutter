@@ -12,7 +12,7 @@ class _CidadesPageState extends State<CidadesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Cidaes Page"),),
+      appBar: AppBar(title: const Text("Cidades Page"),),
       body: Column(children: [],),
     );
   }

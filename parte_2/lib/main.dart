@@ -97,7 +97,7 @@ class MyApp extends StatelessWidget {
               settings: settings,
               builder: (forms) => FormsPage(),
             );
-          case 'cidade':
+          case '/cidades':
             return MaterialPageRoute(
               settings: settings,
               builder: (cidade) => const CidadesPage(),
