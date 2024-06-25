@@ -157,7 +157,7 @@ class _FormsPageState extends State<FormsPage> {
                     },
                     child: const Text("Save"),
                   ),
-                  Text(digitText)
+                  Text(digitText),
                 ],
               ),
             ),
