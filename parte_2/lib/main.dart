@@ -14,6 +14,8 @@ import 'package:device_preview/device_preview.dart';
 import 'package:parte_2/pages/dialogs/dialogs.dart';
 import 'package:parte_2/pages/snackbar/snackbar_page.dart.dart';
 
+import 'pages/stack/stack.dart';
+
 // void main() {
 //   runApp(
 //     DevicePreview(
@@ -101,6 +103,11 @@ class MyApp extends StatelessWidget {
             return MaterialPageRoute(
               settings: settings,
               builder: (cidade) => const CidadesPage(),
+            );
+          case "/stack":
+            return MaterialPageRoute(
+              settings: settings,
+              builder: (stack) => const StackPage(),
             );
         }
 

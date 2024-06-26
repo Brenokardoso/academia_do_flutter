@@ -110,13 +110,21 @@ class _FormsPageState extends State<FormsPage> {
                       icon: const Icon(Icons.wallet),
                       items: const [
                         DropdownMenuItem(
-                            value: "Item 1", child: Text("Item 1")),
+                          value: "Item 1",
+                          child: Text("Item 1"),
+                        ),
                         DropdownMenuItem(
-                            value: "Item 2", child: Text("Item 2")),
+                          value: "Item 2",
+                          child: Text("Item 2"),
+                        ),
                         DropdownMenuItem(
-                            value: "Item 3", child: Text("Item 3")),
+                          value: "Item 3",
+                          child: Text("Item 3"),
+                        ),
                         DropdownMenuItem(
-                            value: "Item 4", child: Text("Item 4")),
+                          value: "Item 4",
+                          child: Text("Item 4"),
+                        ),
                       ],
                       onChanged: (value) {
                         switch (value) {

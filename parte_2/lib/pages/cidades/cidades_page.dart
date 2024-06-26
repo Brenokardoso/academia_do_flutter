@@ -14,6 +14,8 @@ class CidadesPage extends StatefulWidget {
 }
 
 class _CidadesPageState extends State<CidadesPage> {
+  List<Cidade> cidades = <Cidade>[];
+
   @override
   void initState() {
     super.initState();
@@ -23,14 +25,21 @@ class _CidadesPageState extends State<CidadesPage> {
   Future<void> captureJson() async {
     final cidadeJson = await rootBundle.loadString("assets/json/cidade.json");
     setState(() {
-      cidades = jsonDecode(cidadeJson);
+      List cidadeList = json.decode(cidadeJson);
+      cidades = cidadeList.map((city) => Cidade.fromMap(city)).toList();
     });
   }
 
-  List<Cidade> cidades = <Cidade>[];
-
   @override
   Widget build(BuildContext context) {
+    List<int> listInt = <int>[];
+    var intList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    listInt = intList.map((numero) => numero).toList();
+
+    // print('O valor de listInt : $listInt');
+
+    cidades.add(Cidade(cidade: "Cidade inexistente", estado: "Não existe"));
     return Scaffold(
       appBar: AppBar(
         title: const Text("Cidades Page"),
@@ -43,6 +52,7 @@ class _CidadesPageState extends State<CidadesPage> {
           return ListTile(
             title: Text(indexCity.cidade),
             subtitle: Text(indexCity.estado),
+            onTap: () {},
           );
         },
       ),
