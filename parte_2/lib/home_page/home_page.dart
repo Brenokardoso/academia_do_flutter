@@ -13,6 +13,7 @@ enum PopUpMenuPages {
   forms,
   cidades,
   stack,
+  bottomNavigator,
 }
 
 class HomePage extends StatelessWidget {
@@ -75,6 +76,8 @@ Widget customPopUpMenuIButton(BuildContext context) {
           Navigator.of(context).pushNamed("/cidades");
         case PopUpMenuPages.stack:
           Navigator.of(context).pushNamed("/stack");
+        case PopUpMenuPages.bottomNavigator:
+          Navigator.of(context).pushNamed("/bottomNavigate");
       }
     },
     itemBuilder: (BuildContext context) {
@@ -122,6 +125,10 @@ Widget customPopUpMenuIButton(BuildContext context) {
         const PopupMenuItem(
           value: PopUpMenuPages.stack,
           child: Text("Stack"),
+        ),
+        const PopupMenuItem(
+          value: PopUpMenuPages.bottomNavigator,
+          child: Text("Bottom Navigator"),
         ),
       ];
     },

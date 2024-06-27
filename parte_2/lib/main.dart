@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:parte_2/pages/bottom_navigator_bar/bottom_navigator_bar.dart';
 import 'package:parte_2/pages/buttons_and_text_rotatiton/buttons_and_text_rotatiton.dart';
 import 'package:parte_2/pages/child_and_views/child_and_viewes.dart';
 import 'package:parte_2/pages/cidades/cidades_page.dart';
@@ -109,6 +110,10 @@ class MyApp extends StatelessWidget {
               settings: settings,
               builder: (stack) => const StackPage(),
             );
+          case '/bottomNavigate':
+            return MaterialPageRoute(
+                settings: settings,
+                builder: (bottomNavigator) => const BottomNavigatorPage(),);
         }
 
         return null;
