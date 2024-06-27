@@ -6,6 +6,19 @@ class BottomNavigatorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            label: "Home",
+            icon: Icon(Icons.home),
+          ),
+          BottomNavigationBarItem(
+            label: 'Work',
+            icon: Icon(Icons.work),
+          )
+        ],
+        onTap: (value) => print(value),
+      ),
       appBar: AppBar(
         title: const Text('Bottom Navigator Page'),
       ),
