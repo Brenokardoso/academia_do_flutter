@@ -97,9 +97,7 @@ class ButtonsAndTextRottation extends StatelessWidget {
             ),
             space,
             GestureDetector(
-              onTap: () {
-                return print("TAP GESTURE");
-              },
+              onTap: () => Navigator.of(context).pop(),
               child: Container(
                 alignment: Alignment.center,
                 width: 150,

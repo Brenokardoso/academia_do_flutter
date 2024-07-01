@@ -6,11 +6,12 @@ class Page1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Page 1'),
-      ),
       body: Center(
-        child: Column(),
+        child: Container(
+          width: 200,
+          height: 200,
+          color: Colors.blue,
+        ),
       ),
     );
   }
