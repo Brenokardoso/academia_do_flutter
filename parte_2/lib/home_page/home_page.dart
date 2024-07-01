@@ -14,6 +14,7 @@ enum PopUpMenuPages {
   cidades,
   stack,
   bottomNavigator,
+  circularAvatar,
 }
 
 class HomePage extends StatelessWidget {
@@ -78,6 +79,8 @@ Widget customPopUpMenuIButton(BuildContext context) {
           Navigator.of(context).pushNamed("/stack");
         case PopUpMenuPages.bottomNavigator:
           Navigator.of(context).pushNamed("/bottomNavigate");
+        case PopUpMenuPages.circularAvatar:
+          Navigator.of(context).pushNamed("/circularAvatar");
       }
     },
     itemBuilder: (BuildContext context) {
@@ -129,6 +132,10 @@ Widget customPopUpMenuIButton(BuildContext context) {
         const PopupMenuItem(
           value: PopUpMenuPages.bottomNavigator,
           child: Text("Bottom Navigator"),
+        ),
+        const PopupMenuItem(
+          value: PopUpMenuPages.circularAvatar,
+          child: Text("CircularAvatar"),
         ),
       ];
     },
