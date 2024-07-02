@@ -5,11 +5,13 @@ import 'package:parte_2/pages/bottom_navigator_bar/bottom_navigator_bar.dart';
 import 'package:parte_2/pages/buttons_and_text_rotatiton/buttons_and_text_rotatiton.dart';
 import 'package:parte_2/pages/child_and_views/child_and_viewes.dart';
 import 'package:parte_2/pages/cidades/cidades_page.dart';
+import 'package:parte_2/pages/colors-work/colors_work.dart';
 import 'package:parte_2/pages/container/container_page.dart';
 import 'package:parte_2/pages/dialogs/dialogs.dart';
 import 'package:parte_2/home_page/home_page.dart';
 import 'package:parte_2/pages/forms/forms_page.dart';
 import 'package:parte_2/pages/layoutBuilder/layout_builder_page.dart';
+import 'package:parte_2/pages/material_banner/material_banner.dart';
 import 'package:parte_2/pages/media_query/media_query.dart';
 import 'package:parte_2/pages/rows_and_columns/rows_and_coluns_page.dart';
 import 'package:device_preview/device_preview.dart';
@@ -113,10 +115,24 @@ class MyApp extends StatelessWidget {
             );
           case '/bottomNavigate':
             return MaterialPageRoute(
-                settings: settings,
-                builder: (bottomNavigator) => const BottomNavigatorPage(),);
+              settings: settings,
+              builder: (bottomNavigator) => const BottomNavigatorPage(),
+            );
           case '/circularAvatar':
-          return MaterialPageRoute(settings:settings, builder: (circularAvatar)=> const CicularPage(),);
+            return MaterialPageRoute(
+              settings: settings,
+              builder: (circularAvatar) => const CicularPage(),
+            );
+          case '/colorsWork':
+            return MaterialPageRoute(
+              settings: settings,
+              builder: (circularAvatar) => const ColorsWork(),
+            );
+          case '/banner':
+            return MaterialPageRoute(
+              settings: settings,
+              builder: (circularAvatar) => const MaterialBannerPage(),
+            );
         }
 
         return null;

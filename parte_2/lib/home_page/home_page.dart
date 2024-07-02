@@ -15,6 +15,8 @@ enum PopUpMenuPages {
   stack,
   bottomNavigator,
   circularAvatar,
+  colors,
+  banner,
 }
 
 class HomePage extends StatelessWidget {
@@ -81,6 +83,10 @@ Widget customPopUpMenuIButton(BuildContext context) {
           Navigator.of(context).pushNamed("/bottomNavigate");
         case PopUpMenuPages.circularAvatar:
           Navigator.of(context).pushNamed("/circularAvatar");
+        case PopUpMenuPages.colors:
+          Navigator.of(context).pushNamed("/colorsWork");
+             case PopUpMenuPages.banner:
+          Navigator.of(context).pushNamed("/banner");
       }
     },
     itemBuilder: (BuildContext context) {
@@ -136,6 +142,14 @@ Widget customPopUpMenuIButton(BuildContext context) {
         const PopupMenuItem(
           value: PopUpMenuPages.circularAvatar,
           child: Text("CircularAvatar"),
+        ),
+        const PopupMenuItem(
+          value: PopUpMenuPages.colors,
+          child: Text("Colors"),
+        ),
+                const PopupMenuItem(
+          value: PopUpMenuPages.banner,
+          child: Text("Banner"),
         ),
       ];
     },
