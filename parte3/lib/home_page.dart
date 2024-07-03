@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
             ),
             space,
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => navigateTo(context, '/valueNofier'),
               child: const Text("ChangeNotifier"),
             ),
             space,

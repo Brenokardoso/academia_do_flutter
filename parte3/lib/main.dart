@@ -25,6 +25,11 @@ class RootApp extends StatelessWidget {
               settings: settings,
               builder: (setState) => const ImcSetState(),
             );
+             case '/valueNofier':
+            return MaterialPageRoute(
+              settings: settings,
+              builder: (setState) => const ImcSetState(),
+            );
         }
         return null;
       },

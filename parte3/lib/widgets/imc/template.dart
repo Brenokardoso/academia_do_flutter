@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:parte3/widgets/imc/imc_gauge_range.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
-class ImcSetState extends StatefulWidget {
-  const ImcSetState({super.key});
+class Template extends StatefulWidget {
+  const Template({super.key});
 
   @override
-  State<ImcSetState> createState() => _ImcSetStateState();
+  State<Template> createState() => _TemplateState();
 }
 
 TextEditingController controllerWeight = TextEditingController();
 TextEditingController controllerHeight = TextEditingController();
 double soma = 0;
 
-class _ImcSetStateState extends State<ImcSetState> {
+class _TemplateState extends State<Template> {
   @override
   void initState() {
     super.initState();
