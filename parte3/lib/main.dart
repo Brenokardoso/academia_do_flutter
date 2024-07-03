@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:parte3/home_page.dart';
 import 'package:parte3/setState/setState.dart';
+import 'package:parte3/valueNotfier/value_notfier.dart';
 
 void main() {
   runApp(
@@ -24,6 +25,11 @@ class RootApp extends StatelessWidget {
             return MaterialPageRoute(
               settings: settings,
               builder: (setState) => const ImcSetState(),
+            );
+          case '/valueNotifier':
+            return MaterialPageRoute(
+              settings: settings,
+              builder: (setState) => const ImcValueNotifer(),
             );
         }
         return null;
