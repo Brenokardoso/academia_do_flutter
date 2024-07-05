@@ -1,21 +1,25 @@
 import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:parte3/bloc_pattern/bloc_controller.dart';
+import 'package:parte3/bloc_pattern/bloc_state.dart';
 import 'package:parte3/widgets/imc/imc_drawn.dart';
 import 'package:parte3/widgets/imc/imc_gauge_range.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
-class ImcValueNofier extends StatefulWidget {
-  const ImcValueNofier({super.key});
+class ImxBlocPattern extends StatefulWidget {
+  const ImxBlocPattern({super.key});
 
   @override
-  State<ImcValueNofier> createState() => ImcValueNofierState();
+  State<ImxBlocPattern> createState() => ImxBlocPatternState();
 }
 
-TextEditingController controllerWeight = TextEditingController();
-TextEditingController controllerHeight = TextEditingController();
-ValueNotifier<double> imc = ValueNotifier(0.0);
+TextEditingController controllerWeightStreamBloc = TextEditingController();
+TextEditingController controllerHeightStreamBloc = TextEditingController();
+double imc = 0.0;
+ImcBlocController controller = ImcBlocController();
 
-class ImcValueNofierState extends State<ImcValueNofier> {
+class ImxBlocPatternState extends State<ImxBlocPattern> {
   @override
   void initState() {
     super.initState();
@@ -23,8 +27,9 @@ class ImcValueNofierState extends State<ImcValueNofier> {
 
   @override
   void dispose() {
-    controllerHeight.dispose();
-    controllerWeight.dispose();
+    controllerHeightStreamBloc.dispose();
+    controllerWeightStreamBloc.dispose();
+    controller.dispose();
     super.dispose();
   }
 
@@ -32,7 +37,7 @@ class ImcValueNofierState extends State<ImcValueNofier> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("IMC-setState"),
+        title: const Text("IMC-Bloc Pattern"),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -40,39 +45,22 @@ class ImcValueNofierState extends State<ImcValueNofier> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ValueListenableBuilder<double>(
-                valueListenable: imc,
-                builder: (_, value, __) {
-                  try {
-                    imc.value = double.parse(controllerWeight.text) /
-                        (double.parse(controllerHeight.text) *
-                            double.parse(controllerHeight.text));
-                  } catch (error) {
-                    showDialog(
-                      context: context,
-                      builder: (builder) => SimpleDialog(
-                        title: Text(
-                            "Não foi possível transfomar em inteiro por motivos de  $error"),
-                        children: List.generate(
-                          5,
-                          (index) => const Center(
-                            child: Text("Alerta"),
-                          ),
-                        ),
-                      ),
-                    );
+              StreamBuilder<ImcState>(
+                stream: controller.imcOut,
+                builder: (context, streamData) {
+                  double imc = 0;
+                  if (streamData.hasData) {
+                    imc = streamData.data!.imc;
                   }
-
-                  return ImcDraw(value: value);
+                  return ImcDraw(value: imc);
                 },
               ),
               const SizedBox(height: 30),
               TextFormField(
-                controller: controllerWeight,
+                controller: controllerWeightStreamBloc,
                 keyboardType: TextInputType.number,
                 inputFormatters: [
                   CurrencyTextInputFormatter.currency(
-                    // locale: 'pt_br',
                     symbol: '',
                     decimalDigits: 3,
                     turnOffGrouping: true,
@@ -84,11 +72,10 @@ class ImcValueNofierState extends State<ImcValueNofier> {
               ),
               const SizedBox(height: 30),
               TextFormField(
-                controller: controllerHeight,
+                controller: controllerHeightStreamBloc,
                 keyboardType: TextInputType.number,
                 inputFormatters: [
                   CurrencyTextInputFormatter.currency(
-                    // locale: 'pt_br',
                     symbol: '',
                     decimalDigits: 2,
                     turnOffGrouping: true,
@@ -100,11 +87,15 @@ class ImcValueNofierState extends State<ImcValueNofier> {
               ),
               const SizedBox(height: 30),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  controller.imcSum(
+                      peso: controllerWeightStreamBloc.text,
+                      altura: controllerHeightStreamBloc.text);
+                },
                 child: const Text("Calcular-IMC"),
               ),
               const SizedBox(height: 10),
-              Text("O Imc é de ${imc != 0 ? imc : ''}")
+              Text("O Imc é de ${imc != 0.0 ? imc : ''}")
             ],
           ),
         ),

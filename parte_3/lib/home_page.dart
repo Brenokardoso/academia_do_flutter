@@ -25,17 +25,17 @@ class HomePage extends StatelessWidget {
             ),
             space,
             ElevatedButton(
-              onPressed: () => navigateTo(context, '/valueNofier'),
-              child: const Text("ChangeNotifier"),
-            ),
-            space,
-            ElevatedButton(
-              onPressed: () {},
+              onPressed: () => navigateTo(context, '/valueNotifier'),
               child: const Text("ValueNotifier"),
             ),
             space,
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => navigateTo(context, "/changeNotifier"),
+              child: const Text("ChangeNotifier"),
+            ),
+            space,
+            ElevatedButton(
+              onPressed: () => navigateTo(context, "/bloc"),
               child: const Text("Block Patterner"),
             ),
             space

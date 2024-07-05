@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:parte3/bloc_pattern/bloc_pattern_page.dart';
+import 'package:parte3/change_notifier/change_notifer.dart';
 import 'package:parte3/home_page.dart';
 import 'package:parte3/setState/setState.dart';
 
@@ -25,10 +27,20 @@ class RootApp extends StatelessWidget {
               settings: settings,
               builder: (setState) => const ImcSetState(),
             );
-             case '/valueNofier':
+          case '/valueNotifier':
             return MaterialPageRoute(
               settings: settings,
               builder: (setState) => const ImcSetState(),
+            );
+          case '/changeNotifier':
+            return MaterialPageRoute(
+              settings: settings,
+              builder: (setState) => const ImcChangeNotifer(),
+            );
+                    case '/bloc':
+            return MaterialPageRoute(
+              settings: settings,
+              builder: (setState) => const ImxBlocPattern(),
             );
         }
         return null;
