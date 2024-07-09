@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parte_6_provider/change_notifer/change_notfier_controller.dart';
 import 'package:parte_6_provider/change_notifer/change_notifier_page.dart';
 import 'package:parte_6_provider/provider/provider_page.dart';
 import 'package:parte_6_provider/provider/user_model.dart';
@@ -13,14 +14,21 @@ class RootApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Provider(
-      create: (_) {
-        return UserModel(
-          name: 'Breno Cardoso',
-          imgAvatarUrl: "https://i.redd.it/4kbg7ionk63a1.jpg",
-          bithDate: "10/10",
-        );
-      },
+    return MultiProvider(
+      providers: [
+        Provider(
+          create: (_) {
+            return UserModel(
+              name: 'Breno Cardoso',
+              imgAvatarUrl: "https://i.redd.it/4kbg7ionk63a1.jpg",
+              bithDate: "10/10/2024",
+            );
+          },
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ProviderNotifyController(),
+        ),
+      ],
       child: MaterialApp(
         title: 'Flutter Provider',
         debugShowCheckedModeBanner: false,
