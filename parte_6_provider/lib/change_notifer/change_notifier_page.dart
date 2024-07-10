@@ -12,11 +12,20 @@ class ChangeNotifierPage extends StatefulWidget {
 }
 
 class _ChangeNotifierPageState extends State<ChangeNotifierPage> {
+  var providerControllerNotify;
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      Future.delayed(const Duration(seconds: 4),
+          () => providerControllerNotify.changeName("Roberto Carlos da Silva"));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    var providerControllerRead = context.read<ProviderNotifyController>();
-    var providerControllerNotify =
-        Provider.of<ProviderNotifyController>(context);
+    print('BUILD');
+    providerControllerNotify = Provider.of<ProviderNotifyController>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -25,28 +34,61 @@ class _ChangeNotifierPageState extends State<ChangeNotifierPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(
-            child: CircleAvatar(
-              backgroundImage: NetworkImage(
-                providerControllerNotify.urlImage,
-              ),
-            ),
+          Selector<ProviderNotifyController,String>(
+            selector:(context,controller) => controller.urlImage,
+            builder: (_, urlImage, __) {
+              return Center(
+                child: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                    urlImage,
+                  ),
+                ),
+              );
+            },
           ),
           const SizedBox(height: 20),
-          Text(
-            "Nome : ${providerControllerNotify.name}",
-            style: const TextStyle(fontSize: 20),
+          Selector<ProviderNotifyController,String>(
+            selector: (_, controller) => controller.name,
+            builder: (_, name, __) {
+              return Text(
+                "Nome : $name",
+                style: const TextStyle(fontSize: 20),
+              );
+            },
           ),
           const SizedBox(height: 20),
-          Text(
-            "Ano de Nacimento : ${providerControllerNotify.bornDate}",
-            style: const TextStyle(fontSize: 20),
+          Selector<ProviderNotifyController,String>(
+            selector: (_, controller) => controller.bornDate ,
+            builder: (_, bornDate, __) {
+              return Text(
+                "Ano de Nacimento : $bornDate",
+                style: const TextStyle(fontSize: 20),
+              );
+            },
           ),
+          const SizedBox(height: 10),
           Provider(
             create: (context) =>
                 ProdutoModel(nome: "This names he's Providers "),
             child: ProdutoWidget(),
           ),
+          ElevatedButton(
+            onPressed: () =>
+                providerControllerNotify.changeName("Breno Kardoso"),
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.resolveWith(
+                (states) {
+                  if (states.contains(MaterialState.hovered)) {
+                    return Colors.red;
+                  }
+                  return null;
+                },
+              ),
+            ),
+            child: const Text(
+              "Change name",
+            ),
+          )
         ],
       ),
     );

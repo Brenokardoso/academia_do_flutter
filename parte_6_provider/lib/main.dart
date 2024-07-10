@@ -39,7 +39,9 @@ class RootApp extends StatelessWidget {
                 fontSize: 25,
                 fontWeight: FontWeight.bold),
             backgroundColor: Colors.white,
-            iconTheme: IconThemeData(color: Colors.orange),
+            iconTheme: IconThemeData(
+              color: Colors.orange,
+            ),
           ),
         ),
         routes: {
